@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Computer Force | Checkout</title>
+    <link rel="stylesheet" href="css/template.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+    <a href="Home.html">
+        <img id="logo" src="images/logo.png" alt="Computer Force Logo">
+    </a>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="about.html">About</a></li>
+    </ul>
+</nav>
+
+<main>
+    <section class="cf-card-section">
+        <h1>Checkout</h1>
+        <form id="checkoutForm">
+            <h2>Billing Information</h2>
+            <label for="cf-name">Full Name</label>
+            <input id="cf-name" type="text" required>
+
+            <label for="cf-email">Email</label>
+            <input id="cf-email" type="email" required>
+
+            <label for="cf-address">Address</label>
+            <input id="cf-address" type="text" required>
+
+            <label for="cf-card">Card Number</label>
+            <input id="cf-card" type="text" maxlength="16" required>
+
+            <label for="cf-expiry">Expiry Date</label>
+            <input id="cf-expiry" type="text" placeholder="MM/YY" required>
+
+            <label for="cf-cvv">CVV</label>
+            <input id="cf-cvv" type="text" maxlength="3" required>
+
+            <button type="submit">Complete Purchase</button>
+        </form>
+        <div id="confirmationMessage" style="display:none;">
+            Thank you! Your order has been successfully placed.
+        </div>
+    </section>
+</main>
+
+</div>
+
+<footer>
+    <div class="footerContainer">
+        <div class="footerColumn">
+            <h4>Computer Force</h4>
+            <p>100 Main Road</p>
+            <p>Parramatta, NSW 2150</p>
+            <p>Australia</p>
+        </div>
+
+        <div class="footerColumn">
+            <h4>Contact</h4>
+            <p>Email: info@computerforce.com.au</p>
+            <p>Phone: 02 4444 5555</p>
+        </div>
+
+        <div class="footerColumn">
+            <h4>Legal</h4>
+            <p><a href="privacy.html">Privacy Policy</a></p>
+        </div>
+    </div>
+
+    <div class="footerBottom">
+        2026 © Computer Force | All rights reserved
+    </div>
+</footer>
+
+<script>
+document.getElementById("checkoutForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    document.getElementById("confirmationMessage").style.display = "block";
+});
+</script>
+
+</body>
+</html>

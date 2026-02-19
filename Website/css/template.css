@@ -1,0 +1,554 @@
+/* ===================================== */
+/* CHECKOUT & PRIVACY PAGE STYLING */
+/* ===================================== */
+
+.cf-card-section {
+    background: #fff6f6;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    padding: 48px 48px 40px 48px;
+    margin-bottom: 40px;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cf-card-section h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 18px;
+    color: var(--cfDarkRed);
+    letter-spacing: 1px;
+}
+
+.cf-card-section h2 {
+    font-size: 1.4rem;
+    color: var(--cfRed);
+    margin-top: 32px;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.cf-card-section p {
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+    color: #222;
+    line-height: 1.7;
+}
+
+.cf-card-section label {
+    font-weight: 600;
+    color: var(--cfDarkRed);
+    margin-bottom: 4px;
+    display: block;
+}
+
+.cf-card-section input[type="text"],
+.cf-card-section input[type="email"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1.5px solid var(--cfGrey);
+    border-radius: 6px;
+    margin-bottom: 16px;
+    font-size: 1rem;
+    background: #fff;
+    transition: border 0.2s;
+}
+
+.cf-card-section input[type="text"]:focus,
+.cf-card-section input[type="email"]:focus {
+    border: 1.5px solid var(--cfRed);
+    outline: none;
+}
+
+.cf-card-section button[type="submit"] {
+    width: 100%;
+    background: var(--cfRed);
+    color: #fff;
+    border: none;
+    padding: 14px 0;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s;
+}
+
+.cf-card-section button[type="submit"]:hover {
+    background: var(--cfDarkRed);
+}
+
+.cf-card-section #confirmationMessage {
+    color: var(--cfDarkRed);
+    background: #fff0f0;
+    border-radius: 6px;
+    padding: 16px;
+    text-align: center;
+    font-size: 1.1rem;
+    margin-top: 24px;
+}
+
+@media (max-width: 900px) {
+    .cf-card-section {
+        padding: 24px 8px 20px 8px;
+        max-width: 98vw;
+    }
+    .cf-card-section h1 {
+        font-size: 1.5rem;
+    }
+    .cf-card-section h2 {
+        font-size: 1.1rem;
+    }
+}
+
+/* Desktop-specific styles */
+@media (min-width: 1024px) {
+    .cf-card-section {
+        max-width: 800px;
+        padding: 60px;
+        margin: 40px auto;
+    }
+
+    .cf-card-section h1 {
+        font-size: 3rem;
+    }
+
+    .cf-card-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .cf-card-section p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Tablet-specific styles */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .cf-card-section {
+        max-width: 600px;
+        padding: 40px;
+        margin: 30px auto;
+    }
+
+    .cf-card-section h1 {
+        font-size: 2.2rem;
+    }
+
+    .cf-card-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .cf-card-section p {
+        font-size: 1.1rem;
+    }
+}
+
+/* Mobile-specific styles */
+@media (max-width: 767px) {
+    .cf-card-section {
+        max-width: 90%;
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .cf-card-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .cf-card-section h2 {
+        font-size: 1.2rem;
+    }
+
+    .cf-card-section p {
+        font-size: 1rem;
+    }
+}
+/* ===================================== */
+/* ABOUT PAGE STYLING */
+/* ===================================== */
+
+.about-section {
+    background: #fff6f6;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    padding: 48px 48px 40px 48px;
+    margin-bottom: 40px;
+}
+
+.about-section h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 18px;
+    color: var(--cfDarkRed);
+    letter-spacing: 1px;
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    margin-bottom: 32px;
+    color: #222;
+    line-height: 1.7;
+}
+
+.about-section h2 {
+    font-size: 2rem;
+    color: var(--cfRed);
+    margin-top: 36px;
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+
+.about-section ul {
+    margin-bottom: 32px;
+    margin-left: 24px;
+    font-size: 1.1rem;
+    color: #222;
+    line-height: 1.7;
+}
+
+.about-section li {
+    margin-bottom: 10px;
+}
+
+.about-section strong {
+    color: var(--cfDarkRed);
+}
+
+@media (max-width: 900px) {
+    .about-section {
+        padding: 28px 12px 24px 12px;
+    }
+    .about-section h1 {
+        font-size: 2rem;
+    }
+    .about-section h2 {
+        font-size: 1.3rem;
+    }
+}
+/* ===================================== */
+/* CUSTOM SCROLLBAR */
+/* ===================================== */
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+    width: 12px;
+    background: var(--cfPink);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--cfRed);
+    border-radius: 8px;
+    border: 2px solid var(--cfPink);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--cfDarkRed);
+}
+
+/* Firefox */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--cfRed) var(--cfPink);
+}
+/* ===================================== */
+/* ROOT VARIABLES */
+/* ===================================== */
+:root {
+    --cfBlack: #000;
+    --cfGrey: #888;
+    --cfRed: #BD4B4B;
+    --cfDarkRed: #a33b3b;
+    --cfPink: #EFB7B7;
+}
+
+/* ===================================== */
+/* GLOBAL RESET */
+/* ===================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* ===================================== */
+/* HEADER */
+/* ===================================== */
+header {
+    background-color: var(--cfRed);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+#logo {
+    height: 55px;
+}
+
+/* ===================================== */
+/* NAVIGATION */
+/* ===================================== */
+nav {
+    background-color: var(--cfDarkRed);
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    position: fixed;
+    top: 80px;
+    width: 100%;
+    z-index: 999;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover {
+    opacity: 0.7;
+}
+
+/* ===================================== */
+/* MAIN LAYOUT */
+/* ===================================== */
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: space-between; /* IMPORTANT FIX */
+    align-items: flex-start;
+    gap: 40px;
+    padding: 40px 60px;
+    margin-top: 135px; /* header + nav */
+    background-color: var(--cfPink);
+}
+
+/* Content area */
+section {
+    flex: 1;
+    max-width: 1000px;
+    padding: 40px;
+}
+
+/* ===================================== */
+/* CART (ASIDE) */
+/* ===================================== */
+
+aside {
+    flex: 0 0 300px;
+    background-color: #8f8f8f;
+    padding: 40px 20px;
+    border-radius: 8px;
+}
+
+aside h2 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+/* Cart table */
+aside table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+aside th {
+    text-align: left;
+    font-size: 0.9rem;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+
+aside td {
+    padding: 10px 0;
+    font-size: 0.9rem;
+}
+
+aside tr:not(:last-child) td {
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.total {
+    font-weight: bold;
+}
+
+/* Checkout Button */
+input[value="Go to Checkout"] {
+    width: 100%;
+    background-color: var(--cfRed);
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+input[value="Go to Checkout"]:hover {
+    background-color: var(--cfDarkRed);
+}
+
+/* ===================================== */
+/* CATEGORY CARD SYSTEM */
+/* ===================================== */
+
+.categoryCardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.categoryCard {
+    width: 300px;
+    background: #fff;
+    border: 3px solid var(--cfRed);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.categoryCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.categoryCard img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.categoryLabel {
+    background: var(--cfRed);
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding: 18px 0;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.categoryCardContainer a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* ===================================== */
+/* PROFESSIONAL FOOTER */
+/* ===================================== */
+
+footer {
+    background-color: var(--cfDarkRed);
+    color: #fff;
+    padding: 40px 60px 20px 60px;
+}
+
+.footerContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.footerColumn {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footerColumn h4 {
+    margin-bottom: 15px;
+}
+
+.footerColumn p,
+.footerColumn a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footerColumn a:hover {
+    opacity: 0.7;
+}
+
+.footerBottom {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    padding-top: 15px;
+    font-size: 13px;
+}
+
+/* ===================================== */
+/* RESPONSIVE */
+/* ===================================== */
+
+@media (max-width: 900px) {
+
+    main {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+    }
+
+    aside {
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    section {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .categoryCard {
+        width: 90%;
+    }
+
+    nav {
+        padding: 0 20px;
+    }
+
+    nav ul {
+        gap: 20px;
+        font-size: 14px;
+    }
+}

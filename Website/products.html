@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/c0c1ac414c.js" crossorigin="anonymous"></script>
+
+    <!-- JS -->
+    <script type="text/javascript" src="js/template.js"></script>
+    <script>
+    function addToCart(name, price, image) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        cart.push({ name, price, image });
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert(name + " added to cart!");
+        updateCartDisplay();
+    }
+
+    function updateCartDisplay() {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let cartTable = document.querySelector("aside table");
+        if (!cartTable) return;
+        cartTable.innerHTML = `
+            <tr>
+                <th>Item</th>
+                <th>Price (AUD)</th>
+                <th>Remove</th>
+            </tr>
+        `;
+        let total = 0;
+        cart.forEach((item, index) => {
+            total += Number(item.price);
+            cartTable.innerHTML += `
+                <tr>
+                    <td style="display:flex;align-items:center;gap:8px;">
+                        <img src="${item.image}" alt="${item.name}" style="width:32px;height:32px;object-fit:cover;border-radius:4px;">
+                        ${item.name}
+                    </td>
+                    <td>AUD $${Number(item.price).toLocaleString()}</td>
+                    <td><button onclick="removeFromCart(${index})">Remove</button></td>
+                </tr>
+            `;
+        });
+        if (cart.length === 0) {
+            cartTable.innerHTML += `
+                <tr>
+                    <td colspan="3">Your cart is empty.</td>
+                </tr>
+            `;
+        }
+    }
+
+    function removeFromCart(index) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        cart.splice(index, 1);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateCartDisplay();
+    }
+
+    document.addEventListener("DOMContentLoaded", updateCartDisplay);
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const searchQuery = urlParams.get('search');
+
+        if (searchQuery) {
+            const productCards = document.querySelectorAll('.categoryCard');
+            productCards.forEach(card => {
+                const label = card.querySelector('.categoryLabel').textContent.toLowerCase();
+                if (label.includes(searchQuery.toLowerCase())) {
+                    card.style.border = '2px solid red';
+                } else {
+                    card.style.opacity = '0.5';
+                }
+            });
+        }
+    });
+    </script>
+
+    <!-- Stylesheets -->
+    <link rel="icon" href="images/logo.png">
+    <link rel="stylesheet" href="css/template.css">
+    <link rel="stylesheet" href="css/hamburgerMenu.css">
+    <link rel="stylesheet" href="css/iconBagMenu.css">
+    <link rel="stylesheet" href="css/content.css">
+
+    <title>Computer Force | Products</title>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <header>
+
+        <!-- Mobile Menu -->
+        <div class="mobileMenuContainer">
+            <input type="checkbox" class="toggler">
+            <div class="mobileButtonStyle hamburger perfectCenter">
+                <div></div>
+            </div>
+
+            <div class="modal mobileMenu">
+
+                <div class="search-container">
+                    <form>
+                        <input type="text" placeholder="Search" name="search">
+                        <button type="submit">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                </ul>
+                <ul>
+                    <li><a href="products.html">Products</a></li>
+                </ul>
+                <ul>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+        <!-- Logo -->
+        <a href="Home.html">
+            <img id="logo" src="images/LOGO1.png" alt="Image Not Loaded">
+        </a>
+
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav>
+
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+        </ul>
+
+        <ul>
+            <li><a href="products.html">Products</a></li>
+        </ul>
+
+        <ul>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+
+        <ul>
+            <li><a href="about.html">About</a></li>
+        </ul>
+
+        <!-- DESKTOP SEARCH -->
+        <div class="searchDesktopContainer">
+            <form>
+                <input type="text" placeholder="Search..." name="search">
+                <button type="submit">
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>
+        </div>
+
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <section>
+
+            <h1 class="pageTitle centerText">Products we sell</h1>
+            <p class="centerText">
+                Computer Force sells products in the following categories:
+            </p>
+
+            <div class="productGrid">
+                <div class="categoryCard">
+                    <img src="images/Audio.jpg" alt="Audio">
+                    <div class="categoryLabel">Audio</div>
+                    <button onclick="addToCart('Audio', 200, 'images/Audio.jpg')">Add to Cart</button>
+                </div>
+                <div class="categoryCard">
+                    <img src="images/Computer.jpg" alt="Computers">
+                    <div class="categoryLabel">Computers</div>
+                    <button onclick="addToCart('Computers', 1000, 'images/Computer.jpg')">Add to Cart</button>
+                </div>
+                <div class="categoryCard">
+                    <img src="images/GraphicCard.jpg" alt="Graphic Cards">
+                    <div class="categoryLabel">Graphic Cards</div>
+                    <button onclick="addToCart('Graphic Cards', 800, 'images/GraphicCard.jpg')">Add to Cart</button>
+                </div>
+                <div class="categoryCard">
+                    <img src="images/keyboardMouse.jpg" alt="Keyboard & Mice">
+                    <div class="categoryLabel">Keyboard & Mice</div>
+                    <button onclick="addToCart('Keyboard & Mice', 120, 'images/keyboardMouse.jpg')">Add to Cart</button>
+                </div>
+                <div class="categoryCard">
+                    <img src="images/laptop.jpg" alt="Laptops">
+                    <div class="categoryLabel">Laptops</div>
+                    <button onclick="addToCart('Laptops', 1500, 'images/laptop.jpg')">Add to Cart</button>
+                </div>
+                <div class="categoryCard">
+                    <img src="images/Monitor.jpg" alt="Monitors">
+                    <div class="categoryLabel">Monitors</div>
+                    <button onclick="addToCart('Monitors', 400, 'images/Monitor.jpg')">Add to Cart</button>
+                </div>
+                <div class="categoryCard">
+                    <img src="images/networking.png" alt="Networking">
+                    <div class="categoryLabel">Networking</div>
+                    <button onclick="addToCart('Networking', 90, 'images/networking.png')">Add to Cart</button>
+                </div>
+                <div class="categoryCard">
+                    <img src="images/Peripheral.jpg" alt="Peripherals">
+                    <div class="categoryLabel">Peripherals</div>
+                    <button onclick="addToCart('Peripherals', 60, 'images/Peripheral.jpg')">Add to Cart</button>
+                </div>
+                <div class="categoryCard">
+                    <img src="images/Printing & Scanning.jpg" alt="Printing & Scanning">
+                    <div class="categoryLabel">Printing & Scanning</div>
+                    <button onclick="addToCart('Printing & Scanning', 250, 'images/Printing & Scanning.jpg')">Add to Cart</button>
+                </div>
+                <div class="categoryCard">
+                    <img src="images/software.png" alt="Software">
+                    <div class="categoryLabel">Software</div>
+                    <button onclick="addToCart('Software', 50, 'images/software.png')">Add to Cart</button>
+                </div>
+                <div class="categoryCard">
+                    <img src="images/tablet0.jpg" alt="Tablets">
+                    <div class="categoryLabel">Tablets</div>
+                    <button onclick="addToCart('Tablets', 600, 'images/tablet0.jpg')">Add to Cart</button>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ASIDE (Purchases) -->
+        <aside>
+
+            <h2 class="purchasesContainer">Cart</h2>
+
+            <table>
+                <tr>
+                    <th>Item</th>
+                    <th>Price (AUD)</th>
+                </tr>
+
+                <tr>
+                    <td>Test Item 1</td>
+                    <td>$1,000</td>
+                </tr>
+
+                <tr>
+                    <td>Test Item 2</td>
+                    <td>$500</td>
+                </tr>
+
+                <tr class="total">
+                    <th>Total</th>
+                    <th>$1,500</th>
+                </tr>
+            </table>
+
+            <a href="checkout.html"><input type="button" value="Go to Checkout"></a>
+
+        </aside>
+
+    </main>
+
+</div>
+
+<footer>
+    <div class="footerContainer">
+
+        <div class="footerColumn">
+            <h4>Computer Force</h4>
+            <p>100 Main Road</p>
+            <p>Parramatta, NSW 2150</p>
+            <p>Australia</p>
+        </div>
+
+        <div class="footerColumn">
+            <h4>Contact</h4>
+            <p>Email: info@computerforce.com.au</p>
+            <p>Phone: 02 4444 5555</p>
+        </div>
+
+        <div class="footerColumn">
+            <h4>Legal</h4>
+            <p><a href="privacy.html">Privacy Policy</a></p>
+        </div>
+
+    </div>
+
+    <div class="footerBottom">
+        2026 © Computer Force | All rights reserved
+    </div>
+</footer>
+
+</body>
+</html>
