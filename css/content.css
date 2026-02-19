@@ -1,0 +1,284 @@
+/* ===============================
+   Base layout and text
+================================ */
+
+.pageTitle {
+    margin-top: 3vh;
+}
+
+.centerText {
+    margin-top: 1vh;
+    text-align: center;
+}
+
+li > ul {
+    margin-left: 3vw;
+}
+
+/* ===============================
+   Category cards
+================================ */
+
+
+/* ===============================
+   Input groups (forms)
+================================ */
+
+.inputGroup {
+    margin-top: 1vh;
+    margin-bottom: 0.5vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputGroup > label,
+.inputGroup > p {
+    font-weight: bold;
+    flex-grow: 2;
+}
+
+.inputGroup > input[type="text"],
+.inputGroup > input[type="email"],
+.inputGroup > input[type="password"],
+.inputGroup > input[type="date"],
+.inputGroup > select {
+    flex-grow: 2;
+    font-size: 1.25rem;
+    line-height: 1rem;
+    padding: 0.5rem;
+}
+
+/* ===============================
+   Radio buttons
+================================ */
+
+.radioGender {
+    margin: 1vh 0;
+    border: 1px solid var(--cfLightGrey);
+    padding: 1vh;
+}
+
+.radioGender > label {
+    margin-left: 1vw;
+    margin-right: 5vw;
+}
+
+/* ===============================
+   Registration form
+================================ */
+
+.registrationForm {
+    background-color: var(--cfPink);
+    margin: 5vh auto;
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    padding: 1vh 1.5vw;
+}
+
+.registrationForm input[type="button"],
+.registrationForm input[type="submit"] {
+    height: 3rem;
+    border: 0;
+    font-size: 1.5rem;
+    color: var(--cfLightGrey);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.registrationForm input[type="button"] {
+    margin-top: 5px;
+    margin-bottom: 1vh;
+    background-color: darkgrey;
+}
+
+.registrationForm input[type="submit"] {
+    margin-bottom: 1vh;
+    background-color: maroon;
+}
+
+/* ===============================
+   Purchases table
+================================ */
+
+.purchasesContainer {
+    width: 100%;
+    text-align: center;
+    margin-top: 2vh;
+}
+
+aside table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+aside th,
+aside td {
+    padding: 0.5rem;
+    border-bottom: 1px solid #ccc;
+}
+
+tr.total th {
+    font-weight: bold;
+}
+
+/* ===============================
+   Media queries
+================================ */
+
+/* Landscape phones */
+@media (max-width: 850px) and (max-height: 440px) {
+    .registrationForm {
+        width: 70vw;
+    }
+}
+
+/* Tablet portrait */
+@media (min-width: 500px) and (min-height: 710px) {
+    .registrationForm {
+        width: 60vw;
+    }
+}
+
+@media (min-width: 500px) and (min-height: 441px) {
+    .registrationForm {
+        width: 50vw;
+    }
+}
+
+/* Desktop */
+@media (min-width: 600px) and (min-height: 441px) {
+
+    .purchasesContainer {
+        width: 100%;
+        text-align: center;
+        margin-top: 2vh;
+    }
+}
+
+/* Desktop-specific styles */
+@media (min-width: 1024px) {
+    .pageTitle {
+        font-size: 2.5rem;
+        margin-top: 5vh;
+    }
+
+    .centerText {
+        font-size: 1.5rem;
+    }
+
+    li > ul {
+        margin-left: 5vw;
+    }
+}
+
+/* Tablet-specific styles */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .pageTitle {
+        font-size: 2rem;
+        margin-top: 4vh;
+    }
+
+    .centerText {
+        font-size: 1.3rem;
+    }
+
+    li > ul {
+        margin-left: 4vw;
+    }
+}
+
+/* Mobile-specific styles */
+@media (max-width: 767px) {
+    .pageTitle {
+        font-size: 1.8rem;
+        margin-top: 3vh;
+    }
+
+    .centerText {
+        font-size: 1.2rem;
+    }
+
+    li > ul {
+        margin-left: 2vw;
+    }
+}
+
+/* ============================= */
+/* PAGE TITLE */
+/* ============================= */
+
+.pageTitle {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.centerText {
+    text-align: center;
+}
+
+/* ============================= */
+/* CATEGORY + PRODUCT GRID */
+/* ============================= */
+
+.categoryCardContainer,
+.productGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+    padding: 0 20px;
+}
+
+/* ============================= */
+/* CARD STYLE */
+/* ============================= */
+
+.categoryCard {
+    background: transparent;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.categoryCard a {
+    text-decoration: none;
+    display: block;
+}
+
+.categoryCard img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    border: 3px solid #BD4B4B;
+    border-bottom: none;
+}
+
+/* ============================= */
+/* LABEL STYLE */
+/* ============================= */
+
+.categoryLabel {
+    background-color: #BD4B4B;
+    color: white;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding: 18px 0;
+    border: 3px solid #BD4B4B;
+    border-top: none;
+}
+
+/* ============================= */
+/* HOVER EFFECT */
+/* ============================= */
+
+.categoryCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.categoryCard:hover img {
+    filter: brightness(1.1);
+}
