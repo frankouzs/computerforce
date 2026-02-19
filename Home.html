@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Computer Force | Home</title>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/c0c1ac414c.js" crossorigin="anonymous"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/template.css">
+    <link rel="stylesheet" href="css/hamburgerMenu.css">
+    <link rel="stylesheet" href="css/iconBagMenu.css">
+    <link rel="stylesheet" href="css/content.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo.png">
+
+</head>
+
+<body>
+
+    <!-- MAIN CONTAINER -->
+    <div class="container">
+
+        <!-- HEADER -->
+        <header>
+
+            <!-- MOBILE MENU -->
+            <div class="mobileMenuContainer">
+
+                <input type="checkbox" class="toggler">
+
+                <div class="mobileButtonStyle hamburger perfectCenter">
+                    <div></div>
+                </div>
+
+                <div class="modal mobileMenu">
+
+                    <div class="search-container">
+                        <form>
+                            <input type="text" placeholder="Search" name="search">
+                            <button type="submit">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <ul>
+                        <li><a href="Home.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="register.html">Register</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <!-- LOGO -->
+            <a href="Home.html">
+                <img id="logo" src="images/LOGO1.png" alt="Image Not Loaded">
+            </a>
+
+        </header>
+
+        <!-- NAVIGATION -->
+        <nav>
+
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+            </ul>
+
+            <ul>
+                <li><a href="products.html">Products</a></li>
+            </ul>
+
+            <ul>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+
+            <ul>
+                <li><a href="about.html">About</a></li>
+            </ul>
+
+            <!-- DESKTOP SEARCH -->
+            <div class="searchDesktopContainer">
+                <form>
+                    <input type="text" placeholder="Search..." name="search">
+                    <button type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </form>
+            </div>
+
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <main>
+
+            <!-- MAIN SECTION -->
+            <section>
+
+                <h1 class="pageTitle centerText">
+                    Welcome to Computer Force
+                </h1>
+
+                <p class="centerText">
+                    Computer Force is your online expert in all things computing
+                </p>
+
+                <!-- CATEGORY CARD CONTAINER -->
+                <div class="categoryCardContainer">
+                    <div class="categoryCard">
+                        <a href="products.html">
+                            <img src="images/Computer.jpg" alt="Computers">
+                            <div class="categoryLabel">Computers</div>
+                        </a>
+                    </div>
+                    <div class="categoryCard">
+                        <a href="products.html">
+                            <img src="images/Laptop.jpg" alt="Laptops">
+                            <div class="categoryLabel">Laptops</div>
+                        </a>
+                    </div>
+                    <div class="categoryCard">
+                        <a href="products.html">
+                            <img src="images/Monitor.jpg" alt="Monitors">
+                            <div class="categoryLabel">Monitors</div>
+                        </a>
+                    </div>
+                    <div class="categoryCard">
+                        <a href="products.html">
+                            <img src="images/Printing & Scanning.jpg" alt="Printing & Scanning">
+                            <div class="categoryLabel">Printing & Scanning</div>
+                        </a>
+                    </div>
+                    <div class="categoryCard">
+                        <a href="products.html">
+                            <img src="images/software.png" alt="Software">
+                            <div class="categoryLabel">Software</div>
+                        </a>
+                    </div>
+                    <div class="categoryCard">
+                        <a href="products.html">
+                            <img src="images/tablet0.jpg" alt="Tablets">
+                            <div class="categoryLabel">Tablets</div>
+                        </a>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- ASIDE -->
+            <aside>
+
+                <h2 class="purchasesContainer">Cart</h2>
+
+                <table>
+                    <tr>
+                        <th>Item</th>
+                        <th>Price (AUD)</th>
+                        <th>Remove</th>
+                    </tr>
+
+                    <tr>
+                        <td style="display:flex;align-items:center;gap:8px;">
+                            <img src="images/Computer.jpg" alt="Computers" style="width:32px;height:32px;object-fit:cover;border-radius:4px;">
+                            Computers
+                        </td>
+                        <td>AUD $1,000</td>
+                        <td><button onclick="removeFromCart(0)">Remove</button></td>
+                    </tr>
+
+                    <tr>
+                        <td style="display:flex;align-items:center;gap:8px;">
+                            <img src="images/Laptop.jpg" alt="Laptops" style="width:32px;height:32px;object-fit:cover;border-radius:4px;">
+                            Laptops
+                        </td>
+                        <td>AUD $500</td>
+                        <td><button onclick="removeFromCart(1)">Remove</button></td>
+                    </tr>
+
+                    <tr class="total">
+                        <th>Total</th>
+                        <th>AUD $1,500</th>
+                        <th></th>
+                    </tr>
+                </table>
+
+                <a href="checkout.html"><input type="button" value="Go to Checkout"></a>
+
+            </aside>
+
+        </main>
+
+        <footer>
+            <div class="footerContainer">
+
+                <div class="footerColumn">
+                    <h4>Computer Force</h4>
+                    <p>100 Main Road</p>
+                    <p>Parramatta, NSW 2150</p>
+                    <p>Australia</p>
+                </div>
+
+                <div class="footerColumn">
+                    <h4>Contact</h4>
+                    <p>Email: info@computerforce.com.au</p>
+                    <p>Phone: 02 4444 5555</p>
+                </div>
+
+                <div class="footerColumn">
+                    <h4>Legal</h4>
+                    <p><a href="privacy.html">Privacy Policy</a></p>
+                </div>
+
+            </div>
+
+            <div class="footerBottom">
+                2026 © Computer Force | All rights reserved
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    // Function to update the cart display
+    function updateCartDisplay() {
+        const cartTable = document.querySelector('aside table');
+        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Clear the table
+        cartTable.innerHTML = '';
+
+        // Add table headers
+        const headerRow = document.createElement('tr');
+        headerRow.innerHTML = '<th>Item</th><th>Price (AUD)</th><th>Remove</th>';
+        cartTable.appendChild(headerRow);
+
+        // Add cart items to the table
+        cartItems.forEach((item, index) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td style="display: flex; align-items: center; gap: 8px;">
+                    <img src="${item.image}" alt="${item.name}" style="width: 32px; height: 32px; object-fit: cover; border-radius: 4px;">
+                    ${item.name}
+                </td>
+                <td>AUD $${item.price}</td>
+                <td><button onclick="removeFromCart(${index})">Remove</button></td>
+            `;
+            cartTable.appendChild(row);
+        });
+
+        // Show a message if the cart is empty
+        if (cartItems.length === 0) {
+            const emptyRow = document.createElement('tr');
+            emptyRow.innerHTML = '<td colspan="3">Your cart is empty.</td>';
+            cartTable.appendChild(emptyRow);
+        }
+    }
+
+    // Function to remove an item from the cart
+    function removeFromCart(index) {
+        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        cartItems.splice(index, 1); // Remove the item at the specified index
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+        updateCartDisplay(); // Update the cart display
+    }
+
+    // Initialize the cart display on page load
+    document.addEventListener('DOMContentLoaded', updateCartDisplay);
+
+    function handleSearch(event) {
+        event.preventDefault();
+        const searchInput = document.querySelector('.searchDesktopContainer input').value.trim();
+        if (searchInput) {
+            window.location.href = `products.html?search=${encodeURIComponent(searchInput)}`;
+        }
+    }
+
+    document.querySelectorAll('.searchDesktopContainer form').forEach(form => {
+        form.addEventListener('submit', handleSearch);
+    });
+</script>

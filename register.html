@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/c0c1ac414c.js" crossorigin="anonymous"></script>
+
+    <!-- JS -->
+    <script type="text/javascript" src="js/template.js"></script>
+    <script>
+        // Function to update the cart display
+        function updateCartDisplay() {
+            const cartTable = document.querySelector('aside table');
+            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Clear the table
+            cartTable.innerHTML = '';
+
+            // Add table headers
+            const headerRow = document.createElement('tr');
+            headerRow.innerHTML = '<th>Item</th><th>Price (AUD)</th><th>Remove</th>';
+            cartTable.appendChild(headerRow);
+
+            // Add cart items to the table
+            cartItems.forEach((item, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td style="display: flex; align-items: center; gap: 8px;">
+                        <img src="${item.image}" alt="${item.name}" style="width: 32px; height: 32px; object-fit: cover; border-radius: 4px;">
+                        ${item.name}
+                    </td>
+                    <td>AUD $${item.price}</td>
+                    <td><button onclick="removeFromCart(${index})">Remove</button></td>
+                `;
+                cartTable.appendChild(row);
+            });
+
+            // Show a message if the cart is empty
+            if (cartItems.length === 0) {
+                const emptyRow = document.createElement('tr');
+                emptyRow.innerHTML = '<td colspan="3">Your cart is empty.</td>';
+                cartTable.appendChild(emptyRow);
+            }
+        }
+
+        // Function to remove an item from the cart
+        function removeFromCart(index) {
+            const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            cartItems.splice(index, 1); // Remove the item at the specified index
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+            updateCartDisplay(); // Update the cart display
+        }
+
+        // Initialize the cart display on page load
+        document.addEventListener('DOMContentLoaded', updateCartDisplay);
+    </script>
+
+    <!-- CSS -->
+    <link rel="icon" href="images/logo.png">
+    <link rel="stylesheet" href="css/template.css">
+    <link rel="stylesheet" href="css/hamburgerMenu.css">
+    <link rel="stylesheet" href="css/iconBagMenu.css">
+    <link rel="stylesheet" href="css/content.css">
+
+    <title>Computer Force | Register</title>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <header>
+
+        <div class="mobileMenuContainer">
+            <input type="checkbox" class="toggler">
+            <div class="mobileButtonStyle hamburger perfectCenter">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <div class="modal mobileMenu">
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Logo -->
+        <a href="Home.html">
+            <img id="logo" src="images/LOGO1.png" alt="Image Not Loaded">
+        </a>
+
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+        </ul>
+        <ul>
+            <li><a href="products.html">Products</a></li>
+        </ul>
+        <ul>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+        <ul>
+            <li><a href="about.html">About</a></li>
+        </ul>
+
+        <div class="searchDesktopContainer">
+            <form>
+                <input type="text" placeholder="Search..." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <section>
+            <h1 class="pageTitle centerText">Registration Form</h1>
+            <p class="centerText">
+                Please complete the following form to register for an account on our website.
+            </p>
+
+            <form class="registrationForm"
+                  name="registrationForm"
+                  method="post"
+                  onsubmit="return validateRegistrationForm()">
+
+                <!-- Username -->
+                <div class="inputGroup">
+                    <label for="username">Username<sup>*</sup>:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+
+                <!-- Email -->
+                <div class="inputGroup">
+                    <label for="emailAddress">Email Address<sup>*</sup>:</label>
+                    <input type="email" id="emailAddress" name="emailAddress" required>
+                </div>
+
+                <!-- Password -->
+                <div class="inputGroup">
+                    <label for="password">Password<sup>*</sup>:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="inputGroup">
+                    <label for="confirmPassword">Confirm Password<sup>*</sup>:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+
+                <!-- First Name -->
+                <div class="inputGroup">
+                    <label for="firstName">First Name<sup>*</sup>:</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+
+                <!-- Surname -->
+                <div class="inputGroup">
+                    <label for="surname">Surname<sup>*</sup>:</label>
+                    <input type="text" id="surname" name="surname" required>
+                </div>
+
+                <!-- Gender -->
+                <div class="inputGroup">
+                    <p>Gender<sup>*</sup>:</p>
+                    <div class="radioGender">
+                        <input type="radio" id="male" name="gender" value="male" required>
+                        <label for="male">Male</label>
+
+                        <input type="radio" id="female" name="gender" value="female" required>
+                        <label for="female">Female</label>
+                    </div>
+                </div>
+
+                <!-- Date of Birth -->
+                <div class="inputGroup">
+                    <label for="dateOfBirth">Date of Birth:</label>
+                    <input type="date" id="dateOfBirth" name="dateOfBirth">
+                </div>
+
+                <!-- Address -->
+                <div class="inputGroup">
+                    <label for="address">Address<sup>*</sup>:</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+
+                <!-- Suburb -->
+                <div class="inputGroup">
+                    <label for="suburb">Suburb<sup>*</sup>:</label>
+                    <input type="text" id="suburb" name="suburb" required>
+                </div>
+
+                <!-- Post Code -->
+                <div class="inputGroup">
+                    <label for="postCode">Post Code<sup>*</sup>:</label>
+                    <input type="text" id="postCode" name="postCode" required>
+                </div>
+
+                <!-- State -->
+                <div class="inputGroup">
+                    <label for="state">State<sup>*</sup>:</label>
+                    <select id="state" name="state" required>
+                        <option value="ACT">ACT</option>
+                        <option value="NSW">NSW</option>
+                        <option value="NT">NT</option>
+                        <option value="QLD">QLD</option>
+                        <option value="SA">SA</option>
+                        <option value="TAS">TAS</option>
+                        <option value="VIC">VIC</option>
+                        <option value="WA">WA</option>
+                    </select>
+                </div>
+
+                <!-- Phone -->
+                <div class="inputGroup">
+                    <label for="phoneNumber">Phone Number<sup>*</sup>:</label>
+                    <input type="text" id="phoneNumber" name="phoneNumber" required>
+                </div>
+
+                <!-- Buttons -->
+                <input type="button" value="Clear" onclick="clearRegistrationForm()">
+                <input type="submit" name="register" value="Register">
+
+            </form>
+        </section>
+
+        <!-- ASIDE -->
+        <aside>
+            <h2 class="purchasesContainer">Cart</h2>
+            <table></table>
+            <a href="checkout.html"><input type="button" value="Go to Checkout"></a>
+        </aside>
+
+    </main>
+
+</div>
+
+<footer>
+    <div class="footerContainer">
+
+        <div class="footerColumn">
+            <h4>Computer Force</h4>
+            <p>100 Main Road</p>
+            <p>Parramatta, NSW 2150</p>
+            <p>Australia</p>
+        </div>
+
+        <div class="footerColumn">
+            <h4>Contact</h4>
+            <p>Email: info@computerforce.com.au</p>
+            <p>Phone: 02 4444 5555</p>
+        </div>
+
+        <div class="footerColumn">
+            <h4>Legal</h4>
+            <p><a href="privacy.html">Privacy Policy</a></p>
+        </div>
+
+    </div>
+
+    <div class="footerBottom">
+        2026 © Computer Force | All rights reserved
+    </div>
+</footer>
+
+</body>
+</html>
+
+<script>
+function validateRegistrationForm() {
+
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+    const dob = document.getElementById("dateOfBirth").value;
+
+    /* ===== PASSWORD MATCH CHECK ===== */
+    if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return false;
+    }
+
+    /* ===== AGE CHECK ===== */
+    if (dob) {
+        const today = new Date();
+        const birthDate = new Date(dob);
+        let age = today.getFullYear() - birthDate.getFullYear();
+        const month = today.getMonth() - birthDate.getMonth();
+
+        if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+        }
+
+        if (age < 18) {
+            alert("You must be at least 18 years old to register.");
+            return false;
+        }
+    }
+
+    /* ===== SUCCESS MESSAGE ===== */
+    alert("Registration successful! Welcome to Computer Force.");
+
+    return true;
+}
+
+/* CLEAR FORM FUNCTION */
+function clearRegistrationForm() {
+    document.forms["registrationForm"].reset();
+}
+</script>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/c0c1ac414c.js" crossorigin="anonymous"></script>
+
+    <!-- JavaScript -->
+    <script type="text/javascript" src="js/template.js"></script>
+
+    <!-- Stylesheets -->
+        <link rel="icon" href="images/logo.png">
+        <link rel="stylesheet" href="css/template.css">
+        <link rel="stylesheet" href="css/hamburgerMenu.css">
+        <link rel="stylesheet" href="css/iconBagMenu.css">
+        <link rel="stylesheet" href="css/content.css">
+
+    <title>Computer Force | About</title>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ================= HEADER ================= -->
+    <header>
+
+        <div class="mobileMenuContainer">
+
+            <input type="checkbox" class="toggler">
+
+            <div class="mobileButtonStyle hamburger perfectCenter">
+                <div></div>
+            </div>
+
+            <div class="modal mobileMenu">
+
+                <div class="search-container">
+                    <form>
+                        <input type="text" placeholder="Search" name="search">
+                        <button type="submit">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <ul>
+                    <li><a href="products.html">Products</a></li>
+                </ul>
+                <ul>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <a href="Home.html">
+            <img id="logo" src="images/LOGO1.png" alt="Image Not Loaded">
+        </a>
+
+        <div class="mobileMenuContainer">
+
+            <input type="checkbox" class="toggler">
+
+            <div class="mobileButtonStyle iconBag perfectCenter"></div>
+
+            <div class="modal mobileMenu">
+
+                <table>
+                    <h2 class="purchasesContainer">PURCHASES</h2>
+
+                    <tr>
+                        <th>ITEM</th>
+                        <th>PRICE (AUD)</th>
+                    </tr>
+
+                    <tr>
+                        <td>Test Item 1</td>
+                        <td>$1,000</td>
+                    </tr>
+
+                    <tr>
+                        <td>Test Item 2</td>
+                        <td>$500</td>
+                    </tr>
+
+                    <tr class="total">
+                        <th>Total</th>
+                        <th>1,500</th>
+                    </tr>
+                </table>
+
+                <input type="submit" name="checkout" value="Go to Checkout">
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- ================= NAV ================= -->
+    <nav>
+
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+        </ul>
+
+        <ul>
+            <li><a href="products.html">Products</a></li>
+        </ul>
+
+        <ul>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+
+        <ul>
+            <li><a href="about.html">About</a></li>
+        </ul>
+
+        <div class="searchDesktopContainer">
+            <form>
+                <input type="text" placeholder="Search..." name="search">
+                <button type="submit">
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>
+        </div>
+
+    </nav>
+
+    <!-- ================= MAIN ================= -->
+    
+
+
+    <main>
+        <section class="about-section">
+            <h1>About Computer Force</h1>
+
+            <p>
+                Computer Force is a brand-new start-up company designed to provide first-class service to its customers.<br>
+                Based in Parramatta in Sydney, Computer Force provides top class computing products at bargain prices, for sale throughout Australia.
+            </p>
+
+            <h2>Our goals are:</h2>
+            <ul>
+                <li>To become Australia’s most well-known and respected hardware and software provider</li>
+                <li>To create a service-based organisation whose goal is to exceed customer's expectations</li>
+                <li>To provide a smooth, efficient, and transparent sales process</li>
+            </ul>
+
+            <h2>You can contact us using the following methods:</h2>
+            <ul>
+                <li><strong>Address:</strong> 100 Main Road, Parramatta, NSW 20150</li>
+                <li><strong>Email:</strong> info@computerforce.com.au</li>
+                <li><strong>Phone:</strong> 02 4444 5555</li>
+            </ul>
+        </section>
+
+        <!-- Keep your aside section EXACTLY as required -->
+        <aside>
+            <h2 class="purchasesContainer">Cart</h2>
+            <table></table>
+            <a href="checkout.html"><input type="button" value="Go to Checkout"></a>
+        </aside>
+    </main>
+
+</div>
+
+<footer>
+    <div class="footerContainer">
+        <div class="footerColumn">
+            <h4>Computer Force</h4>
+            <p>100 Main Road</p>
+            <p>Parramatta, NSW 2150</p>
+            <p>Australia</p>
+        </div>
+        <div class="footerColumn">
+            <h4>Contact</h4>
+            <p>Email: info@computerforce.com.au</p>
+            <p>Phone: 02 4444 5555</p>
+        </div>
+        <div class="footerColumn">
+            <h4>Legal</h4>
+            <p><a href="privacy.html">Privacy Policy</a></p>
+        </div>
+    </div>
+    <div class="footerBottom">
+        2026 © Computer Force | All rights reserved
+    </div>
+</footer>
+<script>
+    // Function to update the cart display
+    function updateCartDisplay() {
+        const cartTable = document.querySelector('aside table');
+        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Clear the table
+        cartTable.innerHTML = '';
+
+        // Add table headers
+        const headerRow = document.createElement('tr');
+        headerRow.innerHTML = '<th>Item</th><th>Price (AUD)</th><th>Remove</th>';
+        cartTable.appendChild(headerRow);
+
+        // Add cart items to the table
+        cartItems.forEach((item, index) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td style="display: flex; align-items: center; gap: 8px;">
+                    <img src="${item.image}" alt="${item.name}" style="width: 32px; height: 32px; object-fit: cover; border-radius: 4px;">
+                    ${item.name}
+                </td>
+                <td>AUD $${item.price}</td>
+                <td><button onclick="removeFromCart(${index})">Remove</button></td>
+            `;
+            cartTable.appendChild(row);
+        });
+
+        // Show a message if the cart is empty
+        if (cartItems.length === 0) {
+            const emptyRow = document.createElement('tr');
+            emptyRow.innerHTML = '<td colspan="3">Your cart is empty.</td>';
+            cartTable.appendChild(emptyRow);
+        }
+    }
+
+    // Function to remove an item from the cart
+    function removeFromCart(index) {
+        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        cartItems.splice(index, 1); // Remove the item at the specified index
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+        updateCartDisplay(); // Update the cart display
+    }
+
+    // Initialize the cart display on page load
+    document.addEventListener('DOMContentLoaded', updateCartDisplay);
+</script>
+
+<script>
+    function handleSearch(event) {
+        event.preventDefault();
+        const searchInput = document.querySelector('.searchDesktopContainer input').value.trim();
+        if (searchInput) {
+            window.location.href = `products.html?search=${encodeURIComponent(searchInput)}`;
+        }
+    }
+</script>
+
+<script>
+    document.querySelectorAll('.searchDesktopContainer form').forEach(form => {
+        form.addEventListener('submit', handleSearch);
+    });
+</script>
+</body>
+</html>
